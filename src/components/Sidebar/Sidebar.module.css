@@ -1,0 +1,132 @@
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-right: var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  gap: var(--spacing-sm);
+  overflow-y: auto;
+}
+
+.header {
+  padding: var(--spacing-sm) 0 var(--spacing-md) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  margin-bottom: var(--spacing-sm);
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.newButton {
+  width: 100%;
+  padding: 10px;
+  border: 2px dashed rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.newButton:hover {
+  border-color: #007aff;
+  color: #007aff;
+  background: rgba(0, 122, 255, 0.04);
+}
+
+.inputWrapper {
+  padding: var(--spacing-xs) 0;
+}
+
+.input,
+.editInput {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1.5px solid rgba(0, 122, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: var(--font-size-sm);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus,
+.editInput:focus {
+  border-color: #007aff;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--spacing-sm);
+}
+
+.projectItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.projectItem:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.projectItem.active {
+  background: rgba(0, 122, 255, 0.08);
+}
+
+.projectName {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.active .projectName {
+  color: #007aff;
+  font-weight: 600;
+}
+
+.deleteButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.projectItem:hover .deleteButton {
+  display: flex;
+}
+
+.deleteButton:hover {
+  background: rgba(255, 59, 48, 0.1);
+  color: #ff3b30;
+}
